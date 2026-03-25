@@ -8,6 +8,24 @@ print("Namaste Dosto, Welcome to Python Programming")
 # 3. Python is a high level programming language which is easy to learn and understand. Since we plan to learn LLMs, data science and machine learning, python is the best choice for us as it has a lot of libraries and frameworks for these fields.
 
 
+# Why Python is Preferred for AI ?
+# 1. Extensive Libraries and Frameworks:
+# 1. No Need to Recompile Source Code:
+# 1. Ease of Learning and Syntax Simplicity: 
+# 1. Platform Independence: 
+# 1. Strong Community Support:
+
+
+# Essential Python Libraries for AI
+# 1. NumPy
+# 2. Pandas:
+# 3. Matplotlib:
+# 4. Scikit-learn:
+# 5. TensorFlow:
+# 6. PyTorch
+
+
+
 
 # Simple Rules :
 # 1. For comments we use #
@@ -26,24 +44,6 @@ if 5 > 2 :
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+print("This is the end of this file")
 
 
