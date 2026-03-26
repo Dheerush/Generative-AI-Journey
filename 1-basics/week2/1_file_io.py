@@ -122,3 +122,155 @@ print("Log saved successfully")
 # NOTE: We have been mentioning the file path again and again (repititive). Use like this in future
 # file_path = "1-basics/week2/data/test.txt"
 # with open(file_path, "r") as f:
+
+
+
+# =========================================== ADDITIONAL NOTES ====================================
+
+# NOTE: f = file object (NOT just “file name”). It is a handle/connection to the file.
+
+
+# 1. Using "with open()" (Recommended way)
+#    - Automatically closes the file after block execution
+#    - Prevents memory leaks and file corruption
+#    - No need to manually call f.close()
+#    - Industry standard (ALWAYS prefer this)
+
+# Example:
+# with open("file.txt", "r") as f:
+#     data = f.read()
+
+
+
+# 2. Manual File Handling (NOT recommended but important to know)
+# f = open("file.txt", "r")
+# data = f.read()
+# f.close()   # must close manually
+
+# ❌ Problem:
+# If an error occurs before close(), file may remain open
+
+
+# -------------------------------------------------------------
+
+# 3. File Pointer (Cursor concept)
+
+# When you read a file, a pointer moves forward
+
+# Example:
+# f.read() → reads entire file → pointer at end
+# Next read() → returns empty
+
+# Reset pointer:
+# f.seek(0)
+
+
+# -------------------------------------------------------------
+
+# 4. Read Methods Difference
+
+# f.read()       → returns full content (string)
+# f.readline()   → returns one line
+# f.readlines()  → returns list of all lines
+
+
+# -------------------------------------------------------------
+
+# 5. Write vs Append
+
+# "w" → overwrite entire file (⚠️ dangerous)
+# "a" → append to existing content (safe)
+
+# Always be careful using "w"
+
+
+# -------------------------------------------------------------
+
+# 6. File Modes Combination
+
+# "r+" → read + write (must exist)
+# "w+" → write + read (overwrites)
+# "a+" → append + read
+
+# Example:
+# with open("file.txt", "r+") as f:
+#     data = f.read()
+
+
+# -------------------------------------------------------------
+
+# 7. File Paths
+
+# Absolute Path → full system path
+# Relative Path → project-based (preferred)
+
+# Example:
+# "data/file.txt"  → relative
+# "C:/Users/..."   → absolute
+
+
+# -------------------------------------------------------------
+
+# 8. Always Handle File Errors (important for next topic)
+
+# File may not exist → causes error
+
+# Example:
+# try:
+#     with open("file.txt", "r") as f:
+#         data = f.read()
+# except FileNotFoundError:
+#     print("File not found")
+
+
+# -------------------------------------------------------------
+
+# 9. Encoding (advanced but useful)
+
+# Default encoding = system dependent
+
+# Example:
+# with open("file.txt", "r", encoding="utf-8") as f:
+#     data = f.read()
+
+
+# -------------------------------------------------------------
+
+# 10. File as Iterable (VERY IMPORTANT)
+
+# You can loop directly over file
+
+# Example:
+# with open("file.txt", "r") as f:
+#     for line in f:
+#         print(line.strip())
+
+# This is memory efficient (used for large files)
+
+
+# -------------------------------------------------------------
+
+# 11. Good Practices
+
+# ✔ Always use "with open()"
+# ✔ Use relative paths
+# ✔ Handle exceptions (try-except)
+# ✔ Avoid using "w" unless needed
+# ✔ Keep file path in a variable
+# ✔ Use meaningful file names
+
+
+# -------------------------------------------------------------
+
+# 12. Real-World Usage
+
+# Logs → append mode
+# Configs → read mode
+# Data processing → read line by line
+# AI datasets → large file streaming
+
+
+
+
+
+
